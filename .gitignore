@@ -1,0 +1,10 @@
+# Binaries
+**/bin/
+bin-int/
+*.log
+.vs/
+**.lsn
+**.vcxproj
+**.vcxproj.filters
+**.vcxproj.user
+scripts/__pycache__
