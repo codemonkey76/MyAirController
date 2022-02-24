@@ -3,7 +3,7 @@
 bin-int/
 *.log
 .vs/
-**.lsn
+**.sln
 **.vcxproj
 **.vcxproj.filters
 **.vcxproj.user
