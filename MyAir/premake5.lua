@@ -1,7 +1,7 @@
 project "MyAir"
 	kind "StaticLib"
 	language "C++"
-	cppdialect "C++17"
+	cppdialect "C++latest"
 	staticruntime "off"
 
 	targetdir ("%{wks.location}/bin/" .. outputdir .. "/%{prj.name}")
@@ -14,6 +14,7 @@ project "MyAir"
 	{
 		"src/**.h",
 		"src/**.cpp",
+		"vendor/json/*.hpp"
 	}
 
 	defines
@@ -23,23 +24,40 @@ project "MyAir"
 
 	includedirs
 	{
-		"src"
+		"src",
+		"%{IncludeDir.curl}",
+		"%{IncludeDir.json}"
+	}
+	
+	libdirs
+	{
+		"%{LibDir.curl}"
+	}
+
+	links
+	{
+		"libcurl_a",
+		"Normaliz",
+		"Ws2_32",
+		"Wldap32",
+		"Crypt32",
+		"advapi32"
 	}
 
 	filter "system:windows"
 		systemversion "latest"
 
 	filter "configurations:Debug"
-		defines "HZ_DEBUG"
+		defines "MYAIR_DEBUG"
 		runtime "Debug"
 		symbols "on"
 
 	filter "configurations:Release"
-		defines "HZ_RELEASE"
+		defines "MYAIR_RELEASE"
 		runtime "Release"
 		optimize "on"
 
 	filter "configurations:Dist"
-		defines "HZ_DIST"
+		defines "MYAIR_DIST"
 		runtime "Release"
 		optimize "on"

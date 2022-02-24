@@ -12,11 +12,6 @@ workspace "MyAir"
 		"Dist"
 	}
 
-	solution_items
-	{
-		".editorconfig"
-	}
-
 	flags
 	{
 		"MultiProcessorCompile"

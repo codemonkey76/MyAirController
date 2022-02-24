@@ -84,7 +84,6 @@ std::vector<int> Time::GetTokens(std::string str, const std::string& delim)
 	while ((pos = str.find(delim)) != std::string::npos) {
 		token = str.substr(0, pos);
 		tokens.push_back(std::stoi(token));
-		std::cout << token << std::endl;
 		str.erase(0, pos + delim.length());
 	}	
 	tokens.push_back(std::stoi(str));

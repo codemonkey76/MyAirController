@@ -1,7 +1,7 @@
 project "MyAirController"
 	kind "ConsoleApp"
 	language "C++"
-	cppdialect "C++17"
+	cppdialect "C++latest"
 	staticruntime "off"
 
 	targetdir ("%{wks.location}/bin/" .. outputdir .. "/%{prj.name}")
@@ -15,7 +15,7 @@ project "MyAirController"
 
 	includedirs
 	{
-		"%{wks.location}/Hazel/src",
+		"%{wks.location}/MyAir/src",
 	}
 
 	links
@@ -27,17 +27,17 @@ project "MyAirController"
 		systemversion "latest"
 
 	filter "configurations:Debug"
-		defines "HZ_DEBUG"
+		defines "MYAIR_DEBUG"
 		runtime "Debug"
 		symbols "on"
 		
 
 	filter "configurations:Release"
-		defines "HZ_RELEASE"
+		defines "MYAIR_RELEASE"
 		runtime "Release"
 		optimize "on"
 
 	filter "configurations:Dist"
-		defines "HZ_DIST"
+		defines "MYAIR_DIST"
 		runtime "Release"
 		optimize "on"
