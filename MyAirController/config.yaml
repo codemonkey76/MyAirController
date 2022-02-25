@@ -1,0 +1,7 @@
+Address: 10.0.0.69
+Aircon: ac1
+Zone: Deanne
+Port: 2025
+DesiredTemp: 24
+StartTime: [7, 0, 0]
+EndTime: [22, 0, 0]

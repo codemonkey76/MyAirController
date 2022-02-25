@@ -9,6 +9,8 @@ namespace MyAir {
 
 			std::string TestConnection();
 			bool IsSystemOn();
+			bool IsMyZone(const std::string& zone);
+			bool IsTempOutOfRange(const std::string& zone, uint32_t desiredTemperature);			
 			const std::string GetMyZone();
 			void SetMyZone(const std::string& zone);
 			uint32_t GetZoneTemperature(const std::string& zone);

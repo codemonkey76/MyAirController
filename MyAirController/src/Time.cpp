@@ -56,6 +56,18 @@ bool Time::operator==(const Time& other)
 		this->m_Seconds == other.m_Seconds;
 }
 
+Time::operator std::string() const
+{
+	if (m_Hours == 0 && m_Minutes == 0 && m_Seconds == 0)
+		return std::string();
+
+	if (m_Seconds == 0)
+		return std::format("{:02d}:{:02d}", m_Hours, m_Minutes);
+	
+	
+	return std::format("{:02d}:{:02d}:{:02d}", m_Hours, m_Minutes, m_Seconds);
+}
+
 bool Time::operator!=(const Time& other)
 {
 	return !(*this == other);
@@ -67,12 +79,19 @@ bool Time::operator<(const Time& other)
 		(this->m_Hours == other.m_Hours) && (this->m_Minutes < other.m_Minutes) ||
 		(this->m_Hours == other.m_Hours) && (this->m_Minutes == other.m_Minutes) && (this->m_Seconds < other.m_Seconds))
 		return true;
-	return true;
+	return false;
 }
 
 bool Time::operator>(const Time& other)
 {
 	return !(*this < other);
+}
+
+std::ostream& Time::operator<<(std::ostream& stream)
+{
+	stream << std::format("{:02d}:{:02d}:{:02d}", this->m_Hours, this->m_Minutes, this->m_Seconds);
+	
+	return stream;
 }
 
 std::vector<int> Time::GetTokens(std::string str, const std::string& delim)

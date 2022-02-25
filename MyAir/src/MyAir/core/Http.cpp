@@ -2,7 +2,7 @@
 #include "Http.h"
 #define CURL_STATICLIB
 
-#include "curl/curl.h"
+#include <curl.h>
 
 namespace MyAir {
 

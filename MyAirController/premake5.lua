@@ -16,11 +16,13 @@ project "MyAirController"
 	includedirs
 	{
 		"%{wks.location}/MyAir/src",
+		"%{IncludeDir.yaml_cpp}"
 	}
 
 	links
 	{
-		"MyAir"
+		"MyAir",
+		"yaml-cpp"
 	}
 
 	filter "system:windows"

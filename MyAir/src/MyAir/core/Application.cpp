@@ -23,6 +23,18 @@ namespace MyAir {
 		return !strcmp(status.c_str(), "on");
 	}
 
+	bool Application::IsTempOutOfRange(const std::string& zone, uint32_t desiredTemperature)
+	{
+		uint32_t currentSetTemp = GetZoneTemperature(zone);		
+		return (currentSetTemp > desiredTemperature);
+	}
+	
+
+	bool Application::IsMyZone(const std::string& zone)
+	{
+		return !strcmp(this->GetMyZone().c_str(), zone.c_str());		
+	}
+
 	const std::string Application::GetMyZone()
 	{
 		json jsonResult = json::parse(GetSystemData());

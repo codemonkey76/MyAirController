@@ -1,0 +1,3 @@
+[submodule "MyAirController/vendor/yaml-cpp"]
+	path = MyAirController/vendor/yaml-cpp
+	url = https://github.com/theCherno/yaml-cpp
