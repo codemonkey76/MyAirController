@@ -1,3 +1,6 @@
 [submodule "MyAirController/vendor/yaml-cpp"]
 	path = MyAirController/vendor/yaml-cpp
 	url = https://github.com/theCherno/yaml-cpp
+[submodule "MyAir/vendor/json"]
+	path = MyAir/vendor/json
+	url = http://github.com/nlohmann/json

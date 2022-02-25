@@ -3,7 +3,7 @@
 
 IncludeDir = {}
 IncludeDir["curl"] = "%{wks.location}/MyAir/vendor/curl"
-IncludeDir["json"] = "%{wks.location}/MyAir/vendor/json"
+IncludeDir["json"] = "%{wks.location}/MyAir/vendor/json/single_include"
 IncludeDir["yaml_cpp"] = "%{wks.location}/MyAirController/vendor/yaml-cpp/include"
 
 LibDir = {}
